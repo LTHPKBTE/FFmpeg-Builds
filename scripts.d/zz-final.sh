@@ -3,6 +3,40 @@
 SCRIPT_SKIP="1"
 
 ffbuild_depends() {
+    # For universal variants, only include dependencies explicitly enabled in defaults-universal-gpl.sh
+    if [[ $VARIANT == universal-gpl || $VARIANT == universal-lgpl ]]; then
+        echo libiconv
+        echo zlib
+        echo fribidi
+        echo gmp
+        echo libxml2
+        echo openssl
+        echo xz
+        echo fonts
+        echo vmaf
+        echo aom
+        echo dav1d
+        echo svtav1
+        echo libwebp
+        echo libjxl
+        echo zimg
+        echo srt
+        echo onevpl
+        echo soxr
+        echo libass
+        echo x264
+        echo x265
+        echo libvpx
+        echo libmp3lame
+        echo libopus
+        echo libvorbis
+        echo amf
+        echo ffnvcodec
+        echo schannel
+        echo rpath
+        return 0
+    fi
+
     echo libiconv
     echo zlib
     echo fribidi
