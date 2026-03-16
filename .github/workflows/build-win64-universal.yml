@@ -16,6 +16,11 @@ on:
         type: boolean
         default: false
         required: false
+      doRelease:
+        description: 'Publish to Release (and auto-delete Action artifacts)'
+        type: boolean
+        default: false
+        required: false
 
 env:
   DOCKER_BUILDKIT: 1
@@ -23,6 +28,7 @@ env:
 permissions:
   contents: write
   packages: write
+  actions: write
 
 jobs:
   pre_check:
@@ -314,11 +320,8 @@ jobs:
           gh release create "$TAGNAME" --target "master" --title "$NAME" latest_artifacts/*
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      - name: Update Wiki
-        run: ./util/update_wiki.sh artifacts ${{ steps.create_release.outputs.tag_name }}
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-      - name: Prune old releases
-        run: ./util/prunetags.sh
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: Delete workflow Action artifacts
+        if: ${{ always() }}
+        run: |
+          gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+            --jq '.artifacts
