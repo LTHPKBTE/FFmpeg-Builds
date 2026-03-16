@@ -3,10 +3,10 @@
 FF_CONFIGURE="--enable-gpl --enable-version3 --disable-debug --disable-everything"
 
 # Video decoders
-FF_CONFIGURE="$FF_CONFIGURE --enable-decoder=h264,hevc,av1,vp9,vp8,mpeg4,mpeg2video,mpeg1video,vc1,wmv3,prores,dnxhd,mjpeg,rawvideo,png,webp,libjxl"
+FF_CONFIGURE="$FF_CONFIGURE --enable-decoder=h264,hevc,av1,libdav1d,vp9,vp8,mpeg4,mpeg2video,mpeg1video,vc1,wmv3,prores,dnxhd,mjpeg,rawvideo,png,webp,libjxl"
 
 # Audio decoders
-FF_CONFIGURE="$FF_CONFIGURE --enable-decoder=aac,mp3,ac3,eac3,opus,vorbis,flac,alac,wmav2,pcm_s16le,pcm_s24le,pcm_s32le,pcm_f32le,pcm_f64le,pcm_u8,amrnb,amrwb"
+FF_CONFIGURE="$FF_CONFIGURE --enable-decoder=aac,mp3,ac3,eac3,opus,vorbis,flac,alac,pcm_s16le,pcm_s24le,pcm_s32le,pcm_f32le,pcm_f64le,pcm_u8"
 
 # Subtitle decoders
 FF_CONFIGURE="$FF_CONFIGURE --enable-decoder=srt,subrip,ass,webvtt"
@@ -27,7 +27,7 @@ FF_CONFIGURE="$FF_CONFIGURE --enable-parser=h264,hevc,av1,vp9,vp8,mpeg4video,mpe
 FF_CONFIGURE="$FF_CONFIGURE --enable-bsf=h264_mp4toannexb,hevc_mp4toannexb,av1_metadata,vp9_superframe,extract_extradata,aac_adtstoasc"
 
 # Encoders
-FF_CONFIGURE="$FF_CONFIGURE --enable-encoder=libx264,libx265,libvpx-vp9,libvpx-vp8,libaom-av1,mpeg4,mjpeg,png,libwebp,libjxl,aac,libmp3lame,libvorbis,libopus,flac,alac,pcm_s16le,pcm_s24le,pcm_s32le,pcm_f32le,pcm_f64le,pcm_u8,rawvideo,srt,subrip,ass,webvtt,h264_nvenc,hevc_nvenc,av1_nvenc,h264_qsv,hevc_qsv,av1_qsv,h264_amf,hevc_amf,av1_amf"
+FF_CONFIGURE="$FF_CONFIGURE --enable-encoder=libx264,libx265,libvpx-vp9,libvpx-vp8,libaom-av1,libsvtav1,mjpeg,png,libwebp,libjxl,aac,libmp3lame,libvorbis,libopus,flac,alac,pcm_s16le,pcm_s24le,pcm_s32le,pcm_f32le,pcm_f64le,pcm_u8,rawvideo,srt,subrip,ass,webvtt,h264_nvenc,hevc_nvenc,av1_nvenc,h264_qsv,hevc_qsv,av1_qsv,h264_amf,hevc_amf,av1_amf"
 
 # Filters
 FF_CONFIGURE="$FF_CONFIGURE --enable-filter=format,aformat,fifo,afifo,buffersrc,buffersink,abuffersrc,abuffersink,null,scale,crop,pad,overlay,hflip,vflip,rotate,transpose,trim,setpts,fps,yadif,bwdif,atempo,aresample,anull,volume,aevalsrc,amerge,amix,pan,silencedetect,loudnorm,dynaudnorm,zscale,libvmaf,drawtext"
