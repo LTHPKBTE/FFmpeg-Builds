@@ -12,7 +12,7 @@ FF_CONFIGURE="$FF_CONFIGURE --enable-decoder=aac,mp3,ac3,eac3,opus,vorbis,flac,a
 FF_CONFIGURE="$FF_CONFIGURE --enable-decoder=srt,subrip,ass,webvtt"
 
 # Demuxers
-FF_CONFIGURE="$FF_CONFIGURE --enable-demuxer=mov,mp4,matroska,avi,flv,mpegts,mpegps,webm,ogg,asf,mxf,wav,flac,ape,image2,image2pipe,rawvideo,hls,dash,srt,ass,webvtt,mp3,aac,ac3,dts,truehd"
+FF_CONFIGURE="$FF_CONFIGURE --enable-demuxer=mov,mp4,matroska,avi,flv,mpegts,mpegps,webm,ogg,asf,mxf,wav,hevc,flac,ape,image2,image2pipe,rawvideo,hls,dash,srt,ass,webvtt,mp3,aac,ac3,dts,truehd"
 
 # Muxers
 FF_CONFIGURE="$FF_CONFIGURE --enable-muxer=mp4,mov,matroska,avi,flv,mpegts,webm,ogg,asf,wav,flac,image2,image2pipe,rawvideo,hls,dash,srt,ass,webvtt,mp3,ac3,dts"
